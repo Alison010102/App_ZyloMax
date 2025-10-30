@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native"
 
 export const styles = StyleSheet.create({
     container:{
-        justifyContent:"flex-start",
+        justifyContent:"center",
         alignItems:"center",
         backgroundColor:"#454955",
         flex:1
@@ -19,7 +19,8 @@ export const styles = StyleSheet.create({
     box:{
         backgroundColor:"#72b01d",
         height:100,
-        position:"relative"
+        position:"absolute",
+        top:0
     },
     svg:{
         height:200,
@@ -31,8 +32,9 @@ export const styles = StyleSheet.create({
         opacity:1,
         alignItems:"center",
         width:"50%",
-        borderRadius:8,
-        marginTop:250
+        borderRadius:50,
+        marginTop:50,
+        
     },
     textButton:{
         fontSize:30,
