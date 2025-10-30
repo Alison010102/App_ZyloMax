@@ -1,0 +1,55 @@
+import { StyleSheet } from "react-native"
+
+export const styles = StyleSheet.create({
+    container:{
+        justifyContent:"flex-start",
+        alignItems:"center",
+        backgroundColor:"#454955",
+        flex:1
+    },
+    title:{
+        color:"#454955"
+    },
+    image:{
+        width:100,
+        height:100,
+        position:"absolute",
+        alignSelf:"center"
+    },
+    box:{
+        backgroundColor:"#72b01d",
+        height:100,
+        position:"relative"
+    },
+    svg:{
+        height:200,
+        marginTop:40
+    },
+    button:{
+        backgroundColor:"#72b01d",
+        padding:5,
+        opacity:1,
+        alignItems:"center",
+        width:"50%",
+        borderRadius:8,
+        marginTop:250
+    },
+    textButton:{
+        fontSize:30,
+        fontWeight:500,
+        textAlign:"center",
+        color:"#454955",
+    },
+    textButton2:{
+        color:"#72b01d",
+        fontWeight:"bold",
+        fontSize:30,
+        marginTop:5
+    },
+    text:{
+        color:"#f3eff5",
+        fontWeight:200,
+        marginTop:80,
+        fontSize:15,
+    },
+})
