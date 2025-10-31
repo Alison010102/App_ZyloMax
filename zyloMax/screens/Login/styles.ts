@@ -26,14 +26,18 @@ export const styles = StyleSheet.create({
         height:200,
         marginTop:40
     },
+    formButton:{
+        gap:20,
+        marginTop:50,
+        width:"70%"
+    },
     button:{
         backgroundColor:"#72b01d",
-        padding:5,
+        padding:3,
         opacity:1,
         alignItems:"center",
-        width:"50%",
         borderRadius:50,
-        marginTop:50,
+        marginTop:100,
         
     },
     textButton:{
@@ -47,6 +51,11 @@ export const styles = StyleSheet.create({
         fontWeight:200,
         marginTop:80,
         fontSize:15,
+    },
+    form:{
+        alignItems:"center",
+        marginTop:50
+        
     },
     input:{
         width:"80%",

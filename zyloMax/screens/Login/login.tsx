@@ -21,27 +21,31 @@ export default function Login() {
                         source={require("../images/logo.png")}
                     />
                 </Svg>
-                <View style={styles.container}>
+                <View style={styles.form}>
 
-                        <TextInput
-                            style={styles.input}
-                            placeholder="Digite seu e-mail"
-                            placeholderTextColor="#f3eff5"
-                            keyboardType="email-address"
-                            autoCapitalize="none"
-                            value={email}
-                            onChangeText={setEmail}
-                        />
-                        <TextInput
-                            style={styles.input}
-                            placeholder="Digite sua senha"
-                            placeholderTextColor="#f3eff5"
-                            secureTextEntry
-                            value={password}
-                            onChangeText={setPassword}
-                        />
+                    <TextInput
+                        style={styles.input}
+                        placeholder="Digite seu e-mail"
+                        placeholderTextColor="#f3eff5"
+                        keyboardType="email-address"
+                        autoCapitalize="none"
+                        value={email}
+                        onChangeText={setEmail}
+                    />
+                    <TextInput
+                        style={styles.input}
+                        placeholder="Digite sua senha"
+                        placeholderTextColor="#f3eff5"
+                        secureTextEntry
+                        value={password}
+                        onChangeText={setPassword}
+                    />
                 </View>
-                <Text style={styles.text}>Ainda não tem cadastro?</Text>
+            </View>
+            <View style={styles.formButton}>
+                <TouchableOpacity style={styles.button}>
+                    <Text style={styles.textButton}>Entrar</Text>
+                </TouchableOpacity>
             </View>
         </View>
     )
