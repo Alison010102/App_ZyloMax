@@ -1,11 +1,9 @@
-import React, { useState } from "react"
-import { View, Text, Image, Dimensions, TouchableOpacity, TextInput } from "react-native"
+import React from "react"
+import { View, Text, Image, Dimensions, TouchableOpacity } from "react-native"
 import { styles } from "./styles"
 import Svg, { Path } from "react-native-svg"
 
-export default function Login() {
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
+export default function Start({navigation}:{navigation:any}) {
     return (
         <View style={styles.container}>
             <View style={styles.box}>
@@ -21,28 +19,19 @@ export default function Login() {
                         source={require("../images/logo.png")}
                     />
                 </Svg>
-                <View style={styles.container}>
-
-                        <TextInput
-                            style={styles.input}
-                            placeholder="Digite seu e-mail"
-                            placeholderTextColor="#f3eff5"
-                            keyboardType="email-address"
-                            autoCapitalize="none"
-                            value={email}
-                            onChangeText={setEmail}
-                        />
-                        <TextInput
-                            style={styles.input}
-                            placeholder="Digite sua senha"
-                            placeholderTextColor="#f3eff5"
-                            secureTextEntry
-                            value={password}
-                            onChangeText={setPassword}
-                        />
-                </View>
+            </View>
+            <TouchableOpacity style={styles.button}
+             onPress={()=>navigation.navigate("Login")}>
+                <Text style={styles.textButton}>Entrar</Text>
+            </TouchableOpacity>
+            <View>
                 <Text style={styles.text}>Ainda não tem cadastro?</Text>
             </View>
+            <TouchableOpacity
+            onPress={()=>navigation.navigate("Register")}
+            >
+                <Text style={styles.textButton2} >Cadastre-se</Text>
+            </TouchableOpacity>
         </View>
     )
 }  

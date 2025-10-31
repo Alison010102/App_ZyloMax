@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
         justifyContent:"center",
         alignItems:"center",
         backgroundColor:"#454955",
-        flex:1,
+        flex:1
     },
     title:{
         color:"#454955"
@@ -42,22 +42,16 @@ export const styles = StyleSheet.create({
         textAlign:"center",
         color:"#454955",
     },
+    textButton2:{
+        color:"#72b01d",
+        fontWeight:"bold",
+        fontSize:30,
+        marginTop:5
+    },
     text:{
         color:"#f3eff5",
         fontWeight:200,
         marginTop:80,
         fontSize:15,
-    },
-    input:{
-        width:"80%",
-        backgroundColor:"transparent",
-        fontWeight:100,
-        height:40,
-        borderRadius:50,
-        textAlign:"center",
-        borderBottomWidth:1,
-        borderBottomColor:"#72b01d",
-        marginBottom:50,
-        
     },
 })
