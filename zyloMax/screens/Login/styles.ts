@@ -63,5 +63,6 @@ export const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: "#72b01d",
     marginBottom: 50,
+    color:"#f3eff5"
   },
 });
