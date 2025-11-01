@@ -43,12 +43,6 @@ export const styles = StyleSheet.create({
     textAlign: "center",
     color: "#454955",
   },
-  text: {
-    color: "#f3eff5",
-    fontWeight: 200,
-    marginTop: 80,
-    fontSize: 15,
-  },
   form: {
     alignItems: "center",
     marginTop: 50,

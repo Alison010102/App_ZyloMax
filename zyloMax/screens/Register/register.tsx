@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import { styles } from "./styles";
 import Svg, { Path } from "react-native-svg";
+import LottieView from 'lottie-react-native';
 
 export default function Register({ navigation }: { navigation: any }) {
     const [name, setName] = useState("");
@@ -32,20 +33,23 @@ export default function Register({ navigation }: { navigation: any }) {
                 </Svg>
             </View>
             <View style={styles.form}>
-                <TextInput
-                    style={styles.input}
-                    placeholderTextColor="#f3eff5"
-                    placeholder="Digite seu nome"
-                    value={name}
-                    onChangeText={setName}
-                />
-                <TextInput
-                    style={styles.input}
-                    placeholderTextColor="#f3eff5"
-                    placeholder="Digite seu sobrenome"
-                    value={subname}
-                    onChangeText={setSubname}
-                />
+                <View style={styles.nameRow}>
+
+                    <TextInput
+                        style={styles.input}
+                        placeholderTextColor="#f3eff5"
+                        placeholder="Digite seu nome"
+                        value={name}
+                        onChangeText={setName}
+                    />
+                    <TextInput
+                        style={styles.input}
+                        placeholderTextColor="#f3eff5"
+                        placeholder="Digite seu sobrenome"
+                        value={subname}
+                        onChangeText={setSubname}
+                    />
+                </View>
                 <TextInput
                     style={styles.input}
                     placeholder="Digite seu e-mail"
@@ -72,9 +76,14 @@ export default function Register({ navigation }: { navigation: any }) {
                     onChangeText={setPasswordConfirm}
                 />
             </View>
-            <View style={styles.formButton}>
-                <TouchableOpacity style={styles.button}>
-                    <Text style={styles.textButton}>Cadastrar</Text>
+            <View >
+                <TouchableOpacity>
+                    <LottieView
+                        source={require('../images/seta.json')}
+                        autoPlay
+                        loop
+                        style={styles.arrowAnimation}
+                    />
                 </TouchableOpacity>
             </View>
         </View>

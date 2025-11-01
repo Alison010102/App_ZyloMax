@@ -43,16 +43,18 @@ export const styles = StyleSheet.create({
     textAlign: "center",
     color: "#454955",
   },
-  text: {
-    color: "#f3eff5",
-    fontWeight: 200,
-    marginTop: 80,
-    fontSize: 15,
-  },
   form: {
     alignItems: "center",
     marginTop: 50,
+    width: "80%"
   },
+  nameRow: {
+    flexDirection: "row",
+    justifyContent: "center",
+    marginTop: 30,
+    width: "60%"
+  },
+
   input: {
     width: "80%",
     backgroundColor: "transparent",
@@ -63,6 +65,10 @@ export const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: "#72b01d",
     marginBottom: 50,
-    color:"#f3eff5"
+    color: "#f3eff5"
   },
+  arrowAnimation: {
+    width: 90,
+    height: 90
+  }
 });
