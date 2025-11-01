@@ -77,7 +77,7 @@ export default function Register({ navigation }: { navigation: any }) {
                 />
             </View>
             <View >
-                <TouchableOpacity>
+                <TouchableOpacity onPress={()=>navigation.navigate("RegisterStep2")}>
                     <LottieView
                         source={require('../images/seta.json')}
                         autoPlay
