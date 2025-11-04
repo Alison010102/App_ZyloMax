@@ -38,14 +38,14 @@ export default function Register({ navigation }: { navigation: any }) {
                     <TextInput
                         style={styles.input}
                         placeholderTextColor="#f3eff5"
-                        placeholder="Digite seu nome"
+                        placeholder="Nome"
                         value={name}
                         onChangeText={setName}
                     />
                     <TextInput
                         style={styles.input}
                         placeholderTextColor="#f3eff5"
-                        placeholder="Digite seu sobrenome"
+                        placeholder="Sobrenome"
                         value={subname}
                         onChangeText={setSubname}
                     />
@@ -77,7 +77,7 @@ export default function Register({ navigation }: { navigation: any }) {
                 />
             </View>
             <View >
-                <TouchableOpacity onPress={()=>navigation.navigate("RegisterStep2")}>
+                <TouchableOpacity onPress={()=>navigation.navigate("Home")}>
                     <LottieView
                         source={require('../images/seta.json')}
                         autoPlay

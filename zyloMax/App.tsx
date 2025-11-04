@@ -4,7 +4,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Login from "./screens/Login/login";
 import Start from "./screens/Start/start";
 import Register from "./screens/Register/register"
-import RegisterStep2 from "./screens/Register/registerStep2"
+import Home from "./screens/Home/home"
 
 const Stack = createNativeStackNavigator();
 
@@ -20,7 +20,7 @@ export default function App() {
         <Stack.Screen name="Start" component={Start} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Register" component={Register} />
-        <Stack.Screen name="RegisterStep2" component={RegisterStep2} />
+        <Stack.Screen name="Home" component={Home} />
       </Stack.Navigator>
     </NavigationContainer>
   );

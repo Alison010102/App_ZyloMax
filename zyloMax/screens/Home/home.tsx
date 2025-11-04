@@ -11,15 +11,13 @@ import { styles } from "./styles";
 import Svg, { Path } from "react-native-svg";
 import LottieView from 'lottie-react-native';
 
-export default function RegisterStep2({ navigation }: { navigation: any }) {
-
+export default function Home({ navigation }: { navigation: any }) {
     const [name, setName] = useState("");
     const [subname, setSubname] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [passwordConfirm, setPasswordConfirm] = useState("");
     return (
-
         <View style={styles.container}>
             <View style={styles.box}>
                 <Svg
@@ -34,8 +32,5 @@ export default function RegisterStep2({ navigation }: { navigation: any }) {
                     <Image style={styles.image} source={require("../images/logo.png")} />
                 </Svg>
             </View>
-            
             </View>
-
-            )
-                    }
+    )}
