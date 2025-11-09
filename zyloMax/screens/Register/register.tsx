@@ -17,6 +17,11 @@ export default function Register({ navigation }: { navigation: any }) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [passwordConfirm, setPasswordConfirm] = useState("");
+    const [step, setStep] = useState(1);
+
+    const nextStep = () => {
+        setStep(step + 1);
+    }
     return (
         <View style={styles.container}>
             <View style={styles.box}>
@@ -33,57 +38,55 @@ export default function Register({ navigation }: { navigation: any }) {
                 </Svg>
             </View>
             <View style={styles.form}>
-                <View style={styles.nameRow}>
-
+                {step === 1 && (
                     <TextInput
-                        style={styles.input}
-                        placeholderTextColor="#f3eff5"
-                        placeholder="Nome"
-                        value={name}
-                        onChangeText={setName}
-                    />
-                    <TextInput
-                        style={styles.input}
-                        placeholderTextColor="#f3eff5"
-                        placeholder="Sobrenome"
-                        value={subname}
-                        onChangeText={setSubname}
-                    />
-                </View>
-                <TextInput
                     style={styles.input}
-                    placeholder="Digite seu e-mail"
+                    placeholder="Nome"
                     placeholderTextColor="#f3eff5"
-                    keyboardType="email-address"
-                    autoCapitalize="none"
+                    value={name}
+                    onChangeText={setName}
+                    />
+                )}
+                {step === 2 && (
+                    <TextInput
+                    style={styles.input}
+                    placeholder="Sobrenome"
+                    placeholderTextColor="#f3eff5"
+                    value={subname}
+                    onChangeText={setSubname}
+                    />
+                )}
+                 {step === 3 && (
+                    <TextInput
+                    style={styles.input}
+                    placeholder="Email"
+                    placeholderTextColor="#f3eff5"
                     value={email}
                     onChangeText={setEmail}
-                />
-                <TextInput
+                    />
+                )}
+                 {step === 4 && (
+                    <TextInput
                     style={styles.input}
-                    placeholder="Digite sua senha"
+                    placeholder="Digite uma senha"
                     placeholderTextColor="#f3eff5"
-                    secureTextEntry
                     value={password}
                     onChangeText={setPassword}
-                />
-                <TextInput
-                    style={styles.input}
-                    placeholder="Confirme sua senha"
-                    placeholderTextColor="#f3eff5"
-                    secureTextEntry
-                    value={passwordConfirm}
-                    onChangeText={setPasswordConfirm}
-                />
-            </View>
-            <View >
-                <TouchableOpacity onPress={()=>navigation.navigate("Home")}>
-                    <LottieView
-                        source={require('../images/seta.json')}
-                        autoPlay
-                        loop
-                        style={styles.arrowAnimation}
                     />
+                )}
+
+                </View>
+            
+            
+            <View>
+                <TouchableOpacity onPress={nextStep}>
+                    <LottieView
+                    source={require("../images/seta.json")}
+                    autoPlay
+                    loop
+                    style={styles.arrowAnimation}
+                    />
+
                 </TouchableOpacity>
             </View>
         </View>

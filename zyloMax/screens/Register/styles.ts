@@ -45,6 +45,7 @@ export const styles = StyleSheet.create({
   },
   form: {
     alignItems: "center",
+    justifyContent:"center",
     marginTop: 50,
     width: "80%"
   },
@@ -70,5 +71,6 @@ export const styles = StyleSheet.create({
   arrowAnimation: {
     width: 90,
     height: 90
-  }
+  },
+  
 });
