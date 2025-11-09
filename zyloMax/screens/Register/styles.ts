@@ -72,5 +72,14 @@ export const styles = StyleSheet.create({
     width: 90,
     height: 90
   },
+  genderButton:{
+    flexDirection:"row",
+    justifyContent:"space-between",
+    marginVertical:20
+  },
+  genderCustom:{
+    width:150,
+    height:150,
+  }
   
 });

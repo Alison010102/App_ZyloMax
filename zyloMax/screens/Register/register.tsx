@@ -17,6 +17,7 @@ export default function Register({ navigation }: { navigation: any }) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [passwordConfirm, setPasswordConfirm] = useState("");
+    const [gender, setGender] = useState<"male" | "female" | null>(null)
     const [step, setStep] = useState(1);
 
     const nextStep = () => {
@@ -40,53 +41,78 @@ export default function Register({ navigation }: { navigation: any }) {
             <View style={styles.form}>
                 {step === 1 && (
                     <TextInput
-                    style={styles.input}
-                    placeholder="Nome"
-                    placeholderTextColor="#f3eff5"
-                    value={name}
-                    onChangeText={setName}
+                        style={styles.input}
+                        placeholder="Nome"
+                        placeholderTextColor="#f3eff5"
+                        value={name}
+                        onChangeText={setName}
                     />
                 )}
                 {step === 2 && (
                     <TextInput
-                    style={styles.input}
-                    placeholder="Sobrenome"
-                    placeholderTextColor="#f3eff5"
-                    value={subname}
-                    onChangeText={setSubname}
+                        style={styles.input}
+                        placeholder="Sobrenome"
+                        placeholderTextColor="#f3eff5"
+                        value={subname}
+                        onChangeText={setSubname}
                     />
                 )}
-                 {step === 3 && (
+                {step === 3 && (
                     <TextInput
-                    style={styles.input}
-                    placeholder="Email"
-                    placeholderTextColor="#f3eff5"
-                    value={email}
-                    onChangeText={setEmail}
+                        style={styles.input}
+                        placeholder="Email"
+                        placeholderTextColor="#f3eff5"
+                        value={email}
+                        onChangeText={setEmail}
                     />
                 )}
-                 {step === 4 && (
+                {step === 4 && (
                     <TextInput
-                    style={styles.input}
-                    placeholder="Digite uma senha"
-                    placeholderTextColor="#f3eff5"
-                    value={password}
-                    onChangeText={setPassword}
+                        style={styles.input}
+                        placeholder="Digite uma senha"
+                        placeholderTextColor="#f3eff5"
+                        value={password}
+                        onChangeText={setPassword}
+                        secureTextEntry={true}
                     />
+                )}
+                {step === 5 && (
+                    <TextInput
+                        style={styles.input}
+                        placeholder="Confirme sua senha"
+                        placeholderTextColor="#f3eff5"
+                        value={password}
+                        onChangeText={setPassword}
+                        secureTextEntry={true}
+                    />
+                )}
+                {step === 6 && (
+                    <View style={styles.genderButton}>
+                        <TouchableOpacity onPress={() => setGender("male")}>
+                            <Image
+                                source={require("../images/mangym.png")}
+                                style={[styles.genderCustom, { tintColor: gender === "male" ? "#72b01d" : "#f3eff5" }]}
+                            />
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => setGender("female")}>
+                            <Image
+                                source={require("../images/womangym.png")}
+                                style={[styles.genderCustom, { tintColor: gender === "female" ? "#72b01d" : "#f3eff5" }]}
+                            />
+                        </TouchableOpacity>
+
+                    </View>
                 )}
 
-                </View>
-            
-            
+            </View>
             <View>
                 <TouchableOpacity onPress={nextStep}>
                     <LottieView
-                    source={require("../images/seta.json")}
-                    autoPlay
-                    loop
-                    style={styles.arrowAnimation}
+                        source={require("../images/seta.json")}
+                        autoPlay
+                        loop
+                        style={styles.arrowAnimation}
                     />
-
                 </TouchableOpacity>
             </View>
         </View>
