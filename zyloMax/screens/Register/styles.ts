@@ -80,6 +80,30 @@ export const styles = StyleSheet.create({
   genderCustom:{
     width:150,
     height:150,
-  }
+  },
+  goalContainer: {
+  width: "90%",
+  alignItems: "center",
+},
+questions: {
+  color: "#f3eff5",
+  fontSize: 30,
+  fontWeight:"500",
+  marginBottom:30,
+  textAlign: "center",
+},
+optionButton: {
+  width: "100%",
+  padding: 15,
+  borderRadius: 10,
+  marginBottom: 10,
+},
+optionText: {
+  color: "#f3eff5",
+  textAlign: "center",
+  fontWeight:"500",
+  fontSize: 20,
+},
+
   
 });

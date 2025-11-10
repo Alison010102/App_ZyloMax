@@ -18,10 +18,16 @@ export default function Register({ navigation }: { navigation: any }) {
     const [password, setPassword] = useState("");
     const [passwordConfirm, setPasswordConfirm] = useState("");
     const [gender, setGender] = useState<"male" | "female" | null>(null)
+    const [goal, setGoal] = useState<string | null>(null)
     const [step, setStep] = useState(1);
 
     const nextStep = () => {
-        setStep(step + 1);
+        if (step < 7) {
+            setStep(step + 1)
+        }
+        else {
+            navigation.navigate("Home")
+        }
     }
     return (
         <View style={styles.container}>
@@ -40,24 +46,23 @@ export default function Register({ navigation }: { navigation: any }) {
             </View>
             <View style={styles.form}>
                 {step === 1 && (
+                    <View style={styles.form}>
+
                     <TextInput
                         style={styles.input}
                         placeholder="Nome"
                         placeholderTextColor="#f3eff5"
                         value={name}
                         onChangeText={setName}
-                    />
-                )}
-                {step === 2 && (
+                        />
                     <TextInput
-                        style={styles.input}
-                        placeholder="Sobrenome"
-                        placeholderTextColor="#f3eff5"
-                        value={subname}
-                        onChangeText={setSubname}
+                    style={styles.input}
+                    placeholder="Sobrenome"
+                    placeholderTextColor="#f3eff5"
+                    value={subname}
+                    onChangeText={setSubname}
                     />
-                )}
-                {step === 3 && (
+                
                     <TextInput
                         style={styles.input}
                         placeholder="Email"
@@ -65,8 +70,8 @@ export default function Register({ navigation }: { navigation: any }) {
                         value={email}
                         onChangeText={setEmail}
                     />
-                )}
-                {step === 4 && (
+                
+                
                     <TextInput
                         style={styles.input}
                         placeholder="Digite uma senha"
@@ -75,8 +80,8 @@ export default function Register({ navigation }: { navigation: any }) {
                         onChangeText={setPassword}
                         secureTextEntry={true}
                     />
-                )}
-                {step === 5 && (
+                
+                
                     <TextInput
                         style={styles.input}
                         placeholder="Confirme sua senha"
@@ -84,10 +89,12 @@ export default function Register({ navigation }: { navigation: any }) {
                         value={password}
                         onChangeText={setPassword}
                         secureTextEntry={true}
-                    />
-                )}
-                {step === 6 && (
-                    <View style={styles.genderButton}>
+                        />
+                    </View>
+                    )}
+                
+                        {step === 6 && (
+                            <View style={styles.genderButton}>
                         <TouchableOpacity onPress={() => setGender("male")}>
                             <Image
                                 source={require("../images/mangym.png")}
@@ -103,6 +110,207 @@ export default function Register({ navigation }: { navigation: any }) {
 
                     </View>
                 )}
+                {step === 7 && (
+                    <View style={styles.goalContainer}>
+                        <Text style={styles.questions}>1.Qual é o seu principal objetivo?</Text>
+
+                        {["Emagrecer", "Ganhar massa muscular", "Melhorar condicionamento", "Manter a forma"].map((item) => (
+                            <TouchableOpacity
+                                key={item}
+                                style={[
+                                    styles.optionButton,
+                                    { backgroundColor: goal === item ? "#72b01d" : "#f3eff5" },
+                                ]}
+                                onPress={() => setGoal(item)}
+                            >
+                                <Text
+                                    style={[
+                                        styles.optionText,
+                                        { color: goal === item ? "#fff" : "#2d3142" },
+                                    ]}
+                                >
+                                    {item}
+                                </Text>
+                            </TouchableOpacity>
+                        ))}
+                    </View>
+                )}
+                {step === 8 && (
+                    <View style={styles.goalContainer}>
+                        <Text style={styles.questions}>2.Você pratica exercicios físicos atualmente?</Text>
+
+                        {["Sim, com frequencia(4x ou mais na semana)", "Sim, de vez em quando(1-3x por semana)", "Raramente", "Não, mas quero começar agora"].map((item) => (
+                            <TouchableOpacity
+                                key={item}
+                                style={[
+                                    styles.optionButton,
+                                    { backgroundColor: goal === item ? "#72b01d" : "#f3eff5" },
+                                ]}
+                                onPress={() => setGoal(item)}
+                            >
+                                <Text
+                                    style={[
+                                        styles.optionText,
+                                        { color: goal === item ? "#fff" : "#2d3142" },
+                                    ]}
+                                >
+                                    {item}
+                                </Text>
+                            </TouchableOpacity>
+                        ))}
+                    </View>
+                )}
+                {step === 9 && (
+                    <View style={styles.goalContainer}>
+                        <Text style={styles.questions}>3.Como você se considera em relação a experiência de treino?</Text>
+
+                        {["Iniciante - nunca treinei ou estou começando", "Intermediário - já treino há um tempo", "Avançado - treino há mais de 1 ano", "Atleta - sigo a rotina e dieta corretamente"].map((item) => (
+                            <TouchableOpacity
+                                key={item}
+                                style={[
+                                    styles.optionButton,
+                                    { backgroundColor: goal === item ? "#72b01d" : "#f3eff5" },
+                                ]}
+                                onPress={() => setGoal(item)}
+                            >
+                                <Text
+                                    style={[
+                                        styles.optionText,
+                                        { color: goal === item ? "#fff" : "#2d3142" },
+                                    ]}
+                                >
+                                    {item}
+                                </Text>
+                            </TouchableOpacity>
+                        ))}
+                    </View>
+                )}
+                {step === 10 && (
+    <View style={styles.goalContainer}>
+        <Text style={styles.questions}>4.O que mais motiva você?</Text>
+
+        {["Parecer mais atraente", "Ficar mais forte", "Melhorar minha saúde", "Me sentir confiante"].map((item) => (
+            <TouchableOpacity
+                key={item}
+                style={[
+                    styles.optionButton,
+                    { backgroundColor: goal === item ? "#72b01d" : "#f3eff5" },
+                ]}
+                onPress={() => setGoal(item)}
+            >
+                <Text
+                    style={[
+                        styles.optionText,
+                        { color: goal === item ? "#fff" : "#2d3142" },
+                    ]}
+                >
+                    {item}
+                </Text>
+            </TouchableOpacity>
+        ))}
+    </View>
+)}
+{step === 11 && (
+    <View style={styles.goalContainer}>
+        <Text style={styles.questions}>5.Quantos dias por semana você pretende treinar?</Text>
+
+        {["1-2 dias", "3-4 dias", "5-6 dias", "Todos os dias"].map((item) => (
+            <TouchableOpacity
+                key={item}
+                style={[
+                    styles.optionButton,
+                    { backgroundColor: goal === item ? "#72b01d" : "#f3eff5" },
+                ]}
+                onPress={() => setGoal(item)}
+            >
+                <Text
+                    style={[
+                        styles.optionText,
+                        { color: goal === item ? "#fff" : "#2d3142" },
+                    ]}
+                >
+                    {item}
+                </Text>
+            </TouchableOpacity>
+        ))}
+    </View>
+)}
+{step === 12 && (
+    <View style={styles.goalContainer}>
+        <Text style={styles.questions}>6.Você possui alguma restrição física ou lesão?</Text>
+
+        {["Sim, nos joelhos", "Sim, na coluna ou ombros", "Outras restrições", "Não tenho nenhuma"].map((item) => (
+            <TouchableOpacity
+                key={item}
+                style={[
+                    styles.optionButton,
+                    { backgroundColor: goal === item ? "#72b01d" : "#f3eff5" },
+                ]}
+                onPress={() => setGoal(item)}
+            >
+                <Text
+                    style={[
+                        styles.optionText,
+                        { color: goal === item ? "#fff" : "#2d3142" },
+                    ]}
+                >
+                    {item}
+                </Text>
+            </TouchableOpacity>
+        ))}
+    </View>
+)}
+{step === 13 && (
+    <View style={styles.goalContainer}>
+        <Text style={styles.questions}>7.Onde você prefere fazer seus treinos?</Text>
+
+        {["Na academia", "Em casa", "Ao ar livre (Preça,parque,praia)", "Alternar entre os três"].map((item) => (
+            <TouchableOpacity
+                key={item}
+                style={[
+                    styles.optionButton,
+                    { backgroundColor: goal === item ? "#72b01d" : "#f3eff5" },
+                ]}
+                onPress={() => setGoal(item)}
+            >
+                <Text
+                    style={[
+                        styles.optionText,
+                        { color: goal === item ? "#fff" : "#2d3142" },
+                    ]}
+                >
+                    {item}
+                </Text>
+            </TouchableOpacity>
+        ))}
+    </View>
+)}
+{step === 14 && (
+    <View style={styles.goalContainer}>
+        <Text style={styles.questions}>8.Você pretende usar algum tipo de peso nos seus treinos?</Text>
+
+        {["Não, apenas com peso do corpo", "Sim, halteres", "Sim, barra/academia", "Sim, objetos da casa"].map((item) => (
+            <TouchableOpacity
+                key={item}
+                style={[
+                    styles.optionButton,
+                    { backgroundColor: goal === item ? "#72b01d" : "#f3eff5" },
+                ]}
+                onPress={() => setGoal(item)}
+            >
+                <Text
+                    style={[
+                        styles.optionText,
+                        { color: goal === item ? "#fff" : "#2d3142" },
+                    ]}
+                >
+                    {item}
+                </Text>
+            </TouchableOpacity>
+        ))}
+    </View>
+)}
+
 
             </View>
             <View>
