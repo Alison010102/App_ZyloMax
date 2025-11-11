@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { Dimensions, StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   container: {
@@ -104,6 +104,15 @@ optionText: {
   fontWeight:"500",
   fontSize: 20,
 },
+
+  picker: {
+    height: 50, // altura do picker
+    width: "100%", // ocupa 80% da tela
+    color: "#f3eff5", // cor do texto
+    backgroundColor: "#454955", 
+    alignSelf: "center",
+    marginTop: 20,
+  },
 
   
 });
