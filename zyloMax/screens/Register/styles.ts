@@ -106,9 +106,9 @@ optionText: {
 },
 
   picker: {
-    height: 50, // altura do picker
-    width: "100%", // ocupa 80% da tela
-    color: "#f3eff5", // cor do texto
+    height: 50,
+    width: "100%",
+    color: "#f3eff5",
     backgroundColor: "#454955", 
     alignSelf: "center",
     marginTop: 20,

@@ -22,10 +22,11 @@ export default function Register({ navigation }: { navigation: any }) {
   const [gender, setGender] = useState<"male" | "female" | null>(null);
   const [goal, setGoal] = useState<string | null>(null);
   const [birthYear, setBirthYear] = useState<number | null>(null);
+  const [weight, setWeight] = useState<string>("");
   const [step, setStep] = useState(1);
 
   const nextStep = () => {
-    if (step < 11) {
+    if (step < 12) {
       setStep(step + 1);
     } else {
       navigation.navigate("Home");
@@ -381,6 +382,41 @@ export default function Register({ navigation }: { navigation: any }) {
     </Picker>
   </View>
 )}
+{step === 12 && (
+  <View style={styles.goalContainer}>
+    <Text style={styles.questions}>Qual é o seu peso?</Text>
+
+    <TextInput
+      style={[
+        styles.input,
+        {
+          textAlign: "center",
+          fontSize: 28,
+          fontWeight: "bold",
+          color: "#f3eff5",
+        },
+      ]}
+      placeholder="Ex: 70"
+      placeholderTextColor="#ccc"
+      keyboardType="numeric"
+      value={weight}
+      onChangeText={setWeight}
+    />
+
+    <Text
+      style={{
+        fontSize: 36,
+        color: "#72b01d",
+        fontWeight: "bold",
+        textAlign: "center",
+        marginTop: 30,
+      }}
+    >
+      {weight ? `${weight} kg` : "⚖️"}
+    </Text>
+  </View>
+)}
+
 
       </View>
       <View>

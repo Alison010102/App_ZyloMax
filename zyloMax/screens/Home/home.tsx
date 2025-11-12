@@ -4,21 +4,16 @@ import {
     Text,
     Image,
     Dimensions,
-    TouchableOpacity,
-    TextInput,
+    ScrollView,
 } from "react-native";
 import { styles } from "./styles";
 import Svg, { Path } from "react-native-svg";
-import LottieView from 'lottie-react-native';
 
 export default function Home({ navigation }: { navigation: any }) {
-    const [name, setName] = useState("");
-    const [subname, setSubname] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [passwordConfirm, setPasswordConfirm] = useState("");
+    const activities = ["Peito", "Ombro", "Braço", "Pernas", "Costas", "Abdômen"]; // exemplos
     return (
         <View style={styles.container}>
+            {/* Cabeçalho existente */}
             <View style={styles.box}>
                 <Svg
                     width={Dimensions.get("screen").width}
@@ -32,5 +27,49 @@ export default function Home({ navigation }: { navigation: any }) {
                     <Image style={styles.image} source={require("../images/logo.png")} />
                 </Svg>
             </View>
-            </View>
-    )}
+
+            {/* Conteúdo com ScrollView */}
+            <ScrollView
+                showsVerticalScrollIndicator={false}
+                contentContainerStyle={{
+                    paddingBottom: 50,
+                    alignItems: "center",
+                }}
+                style={{
+                    marginTop: 220, // altura do cabeçalho
+                }}
+            >
+                {activities.map((activity) => (
+                    <View
+                        key={activity}
+                        style={{
+                            marginBottom: 15,
+                            alignItems: "center",
+                        }}
+                    >
+                        <Image
+                            source={require("../images/logo.png")}
+                            style={{
+                                width: 150,
+                                height: 150,
+                                borderRadius: 10,
+                                resizeMode: "cover",
+                            }}
+                        />
+                        <Text
+                            style={{
+                                fontSize: 16,
+                                fontWeight: "bold",
+                                marginTop: 5,
+                                color: "#2d3142",
+                                textAlign: "center",
+                            }}
+                        >
+                            {activity}
+                        </Text>
+                    </View>
+                ))}
+            </ScrollView>
+        </View>
+    );
+}
