@@ -387,15 +387,7 @@ export default function Register({ navigation }: { navigation: any }) {
     <Text style={styles.questions}>Qual é o seu peso?</Text>
 
     <TextInput
-      style={[
-        styles.input,
-        {
-          textAlign: "center",
-          fontSize: 28,
-          fontWeight: "bold",
-          color: "#f3eff5",
-        },
-      ]}
+      style={styles.kg}
       placeholder="Ex: 70"
       placeholderTextColor="#ccc"
       keyboardType="numeric"

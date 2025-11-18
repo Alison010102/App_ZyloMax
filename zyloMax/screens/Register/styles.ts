@@ -113,6 +113,10 @@ optionText: {
     alignSelf: "center",
     marginTop: 20,
   },
+  kg:{
+  fontSize:50,
+  color:"#f3eff5"
+  },
 
   
 });
