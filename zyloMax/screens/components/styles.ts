@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
   card: {
     width: "90%",
-    height: 150,
+    height: 130,
     borderRadius: 15,
     overflow: "hidden",
     backgroundColor: "#1e1e1e",
@@ -12,56 +12,41 @@ export const styles = StyleSheet.create({
     elevation: 4,
   },
 
-  /* 50% da largura, fundo preto */
   left: {
-    width: "50%",
-    backgroundColor: "#000",
-    padding: 15,
-    justifyContent: "center",
-  },
-
-  /* 50% da largura, imagem à direita */
-  right: {
-    width: "50%",
+    width: "45%",
     justifyContent: "center",
     alignItems: "center",
     padding: 10,
   },
 
-  /* Imagem ocupando 70% da altura */
+  right: {
+    width: "55%",
+    justifyContent: "center",
+    padding: 10,
+  },
+
   exerciseImage: {
     width: "100%",
-    height: "70%",
+    height: "100%",
     borderRadius: 10,
     resizeMode: "cover",
   },
 
-  score: {
-    color: "#FFD700",
-    fontWeight: "bold",
-    fontSize: 18,
-  },
-
   name: {
-    color: "#fff",
-    fontSize: 22,
+    color: "#f3eff5",
+    fontSize: 20,
     fontWeight: "bold",
-    marginTop: 4,
+    marginBottom: 8,
   },
 
   reviews: {
-    color: "#ccc",
-    marginTop: 3,
+    color: "#72b01d",
+    fontSize: 16,
   },
 
   distance: {
-    color: "#bbb",
-    marginTop: 6,
-  },
-
-  status: {
-    marginTop: 6,
-    fontWeight: "bold",
-    fontSize: 16,
+    color: "#f3eff5",
+    fontSize: 15,
+    marginTop: 5,
   },
 });

@@ -37,6 +37,18 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     borderRadius: 50,
   },
+  button2: {
+    marginTop: 180,
+    paddingHorizontal: 15,
+    flexDirection: "row",
+    maxHeight: 40
+  },
+  selectButton:{
+              paddingVertical: 10,
+              paddingHorizontal: 15,
+              borderRadius: 10,
+              marginHorizontal: 6,
+  },
   textButton: {
     fontSize: 30,
     fontWeight: 500,
