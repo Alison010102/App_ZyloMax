@@ -45,7 +45,7 @@ export const styles = StyleSheet.create({
   },
   form: {
     alignItems: "center",
-    justifyContent:"center",
+    justifyContent: "center",
     marginTop: 50,
     width: "80%"
   },
@@ -72,51 +72,58 @@ export const styles = StyleSheet.create({
     width: 90,
     height: 90
   },
-  genderButton:{
-    flexDirection:"row",
-    justifyContent:"space-between",
-    marginVertical:20
+  genderButton: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginVertical: 20
   },
-  genderCustom:{
-    width:150,
-    height:150,
+  genderCustom: {
+    width: 150,
+    height: 150,
   },
   goalContainer: {
-  width: "90%",
-  alignItems: "center",
-},
-questions: {
-  color: "#f3eff5",
-  fontSize: 30,
-  fontWeight:"500",
-  marginBottom:30,
-  textAlign: "center",
-},
-optionButton: {
-  width: "100%",
-  padding: 15,
-  borderRadius: 10,
-  marginBottom: 10,
-},
-optionText: {
-  color: "#f3eff5",
-  textAlign: "center",
-  fontWeight:"500",
-  fontSize: 20,
-},
+    width: "90%",
+    alignItems: "center",
+  },
+  questions: {
+    color: "#f3eff5",
+    fontSize: 30,
+    fontWeight: "500",
+    marginBottom: 30,
+    textAlign: "center",
+  },
+  optionButton: {
+    width: "100%",
+    padding: 15,
+    borderRadius: 10,
+    marginBottom: 10,
+  },
+  optionText: {
+    color: "#f3eff5",
+    textAlign: "center",
+    fontWeight: "500",
+    fontSize: 20,
+  },
 
   picker: {
     height: 50,
     width: "100%",
     color: "#f3eff5",
-    backgroundColor: "#454955", 
+    backgroundColor: "#454955",
     alignSelf: "center",
     marginTop: 20,
   },
-  kg:{
-  fontSize:50,
-  color:"#f3eff5"
+  kg: {
+    fontSize: 50,
+    color: "#f3eff5"
   },
+  customKg: {
+    fontSize: 36,
+    color: "#72b01d",
+    fontWeight: "bold",
+    textAlign: "center",
+    marginTop: 30,
+  }
 
-  
+
 });

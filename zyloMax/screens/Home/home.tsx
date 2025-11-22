@@ -30,14 +30,14 @@ export default function Home() {
 
   const images: { [key: string]: { [key: string]: any } } = {
     Abdômen: {
-      Iniciante: require("../images/peito2.jpg"),
-      Intermediario: require("../images/peito2.jpg"),
-      Avancado: require("../images/peito2.jpg"),
+      Iniciante: require("../images/abdomen1.jpg"),
+      Intermediario: require("../images/abdomen2.jpg"),
+      Avancado: require("../images/abdomen3.jpg"),
     },
     Braço: {
-      Iniciante: require("../images/peito1.jpg"),
-      Intermediario: require("../images/peito2.jpg"),
-      Avancado: require("../images/peito3.jpg"),
+      Iniciante: require("../images/braco1.jpg"),
+      Intermediario: require("../images/braco2.jpg"),
+      Avancado: require("../images/braco3.jpg"),
     },
     Peito: {
       Iniciante: require("../images/peito1.jpg"),
@@ -45,9 +45,9 @@ export default function Home() {
       Avancado: require("../images/peito3.jpg"),
     },
     Pernas: {
-      Iniciante: require("../images/peito1.jpg"),
-      Intermediario: require("../images/peito1.jpg"),
-      Avancado: require("../images/peito1.jpg"),
+      Iniciante: require("../images/perna1.jpg"),
+      Intermediario: require("../images/perna2.jpg"),
+      Avancado: require("../images/perna3.jpg"),
     },
     "Costas e Ombros": {
       Iniciante: require("../images/peito3.jpg"),
@@ -88,14 +88,14 @@ export default function Home() {
             style={[styles.selectButton,{backgroundColor: selectedCategory === cat ? "#72b01d" : "#454955",}]}
             onPress={() => setSelectedCategory(cat)}
           >
-            <Text style={{ color: "#f3eff5", fontSize: 16 }}>{cat}</Text>
+            <Text style={styles.categoryButton}>{cat}</Text>
           </TouchableOpacity>
         ))}
       </ScrollView>
 
       <ScrollView
-        style={{ marginTop: 20, width: "100%" }}
-        contentContainerStyle={{ alignItems: "center", paddingBottom: 100 }}
+        style={styles.cardScroll}
+        contentContainerStyle={styles.cardContent}
       >
         {selectedCategory &&
           levels.map((l) => (

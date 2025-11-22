@@ -26,12 +26,9 @@ export default function GymCard({
     <TouchableOpacity onPress={onPress} activeOpacity={0.8}>
       <View style={styles.card}>
 
-        {/* Imagem no lado esquerdo */}
         <View style={styles.left}>
           <Image source={image} style={styles.exerciseImage} />
         </View>
-
-        {/* Texto no lado direito */}
         <View style={styles.right}>
           <Text style={styles.name}>{title}</Text>
           <Text style={styles.reviews}>{minutes}</Text>

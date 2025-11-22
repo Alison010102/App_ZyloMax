@@ -9,10 +9,14 @@ import {
 } from "react-native";
 import { styles } from "./styles";
 import Svg, { Path } from "react-native-svg";
+import { useNavigation } from "@react-navigation/native";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const navigation: any = useNavigation();
+
   return (
     <View style={styles.container}>
       <View style={styles.box}>
@@ -27,6 +31,7 @@ export default function Login() {
           />
           <Image style={styles.image} source={require("../images/logo.png")} />
         </Svg>
+
         <View style={styles.form}>
           <TextInput
             style={styles.input}
@@ -37,6 +42,7 @@ export default function Login() {
             value={email}
             onChangeText={setEmail}
           />
+
           <TextInput
             style={styles.input}
             placeholder="Digite sua senha"
@@ -45,8 +51,12 @@ export default function Login() {
             value={password}
             onChangeText={setPassword}
           />
+
           <View style={styles.formButton}>
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => navigation.navigate("Home")}
+            >
               <Text style={styles.textButton}>Entrar</Text>
             </TouchableOpacity>
           </View>

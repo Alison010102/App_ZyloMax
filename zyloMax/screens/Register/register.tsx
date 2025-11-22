@@ -26,7 +26,7 @@ export default function Register({ navigation }: { navigation: any }) {
   const [step, setStep] = useState(1);
 
   const nextStep = () => {
-    if (step < 12) {
+    if (step < 13) {
       setStep(step + 1);
     } else {
       navigation.navigate("Home");
@@ -394,15 +394,31 @@ export default function Register({ navigation }: { navigation: any }) {
       value={weight}
       onChangeText={setWeight}
     />
+    
 
     <Text
-      style={{
-        fontSize: 36,
-        color: "#72b01d",
-        fontWeight: "bold",
-        textAlign: "center",
-        marginTop: 30,
-      }}
+      style={styles.customKg}
+    >
+      {weight ? `${weight} kg` : "⚖️"}
+    </Text>
+  </View>
+)}
+{step === 13 && (
+  <View style={styles.goalContainer}>
+    <Text style={styles.questions}>Qual peso você deseja chegar?</Text>
+
+    <TextInput
+      style={styles.kg}
+      placeholder="Ex: 70"
+      placeholderTextColor="#ccc"
+      keyboardType="numeric"
+      value={weight}
+      onChangeText={setWeight}
+    />
+    
+
+    <Text
+      style={styles.customKg}
     >
       {weight ? `${weight} kg` : "⚖️"}
     </Text>

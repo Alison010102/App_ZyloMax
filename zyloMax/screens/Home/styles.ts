@@ -43,11 +43,11 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     maxHeight: 40
   },
-  selectButton:{
-              paddingVertical: 10,
-              paddingHorizontal: 15,
-              borderRadius: 10,
-              marginHorizontal: 6,
+  selectButton: {
+    paddingVertical: 10,
+    paddingHorizontal: 15,
+    borderRadius: 10,
+    marginHorizontal: 6,
   },
   textButton: {
     fontSize: 30,
@@ -82,5 +82,17 @@ export const styles = StyleSheet.create({
   arrowAnimation: {
     width: 90,
     height: 90
+  },
+  categoryButton: {
+    color: "#f3eff5",
+    fontSize: 16
+  },
+  cardScroll: {
+    marginTop: 20,
+    width: "100%"
+  },
+  cardContent: {
+    alignItems: "center",
+    paddingBottom: 100
   }
 });
