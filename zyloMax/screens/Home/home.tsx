@@ -50,9 +50,9 @@ export default function Home() {
       Avancado: require("../images/perna3.jpg"),
     },
     "Costas e Ombros": {
-      Iniciante: require("../images/peito3.jpg"),
-      Intermediario: require("../images/peito3.jpg"),
-      Avancado: require("../images/peito3.jpg"),
+      Iniciante: require("../images/costa1.jpg"),
+      Intermediario: require("../images/costa2.jpg"),
+      Avancado: require("../images/costa3.jpg"),
     },
   };
 
