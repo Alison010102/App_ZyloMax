@@ -85,7 +85,7 @@ export default function Home() {
         {categories.map((cat) => (
           <TouchableOpacity
             key={cat}
-            style={[styles.selectButton,{backgroundColor: selectedCategory === cat ? "#72b01d" : "#454955",}]}
+            style={[styles.selectButton, { backgroundColor: selectedCategory === cat ? "#72b01d" : "#454955", }]}
             onPress={() => setSelectedCategory(cat)}
           >
             <Text style={styles.categoryButton}>{cat}</Text>
@@ -104,8 +104,29 @@ export default function Home() {
               title={`${selectedCategory} - ${l.level}`}
               minutes={l.minutes}
               exercises={l.exercises}
-              image={images[selectedCategory][l.level]}/>
+              image={images[selectedCategory][l.level]} />
           ))}
+
+        <Text style={styles.sectionTitle}>Personalizar Treino</Text>
+        <TouchableOpacity style={styles.actionCard} activeOpacity={0.8}>
+          <Text style={styles.actionCardText}>Criar meu próprio treino</Text>
+          <Text style={styles.actionCardIcon}>➜</Text>
+        </TouchableOpacity>
+
+        <Text style={styles.sectionTitle}>Metas Semanais</Text>
+        <View style={styles.weeklyCard}>
+          <View>
+            <Text style={styles.weeklyTitle}>Frequência da Semana</Text>
+            <Text style={styles.weeklySubtitle}>3 de 5 dias concluídos</Text>
+          </View>
+          <View style={styles.weeklyRow}>
+            {['D', 'S', 'T', 'Q', 'Q', 'S', 'S'].map((day, index) => (
+              <View key={index} style={[styles.dayCircle, index < 3 && styles.dayCircleActive]}>
+                <Text style={styles.dayText}>{day}</Text>
+              </View>
+            ))}
+          </View>
+        </View>
       </ScrollView>
 
     </View>
